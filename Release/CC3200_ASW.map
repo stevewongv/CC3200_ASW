@@ -1,9 +1,9 @@
 ******************************************************************************
                   TI ARM Linker Unix v5.2.6                    
 ******************************************************************************
->> Linked Sun Feb 14 22:56:37 2016
+>> Linked Sun Feb 14 23:02:09 2016
 
-OUTPUT FILE NAME:   <http_client_demo.out>
+OUTPUT FILE NAME:   <CC3200_ASW.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 20010429
 
 

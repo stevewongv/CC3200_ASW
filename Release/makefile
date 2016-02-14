@@ -125,33 +125,33 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-http_client_demo.out \
+CC3200_ASW.out \
 
 EXE_OUTPUTS__QUOTED += \
-"http_client_demo.out" \
+"CC3200_ASW.out" \
 
 BIN_OUTPUTS += \
-http_client_demo.hex \
+CC3200_ASW.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"http_client_demo.hex" \
+"CC3200_ASW.hex" \
 
 
 # All Target
-all: http_client_demo.out
+all: CC3200_ASW.out
 
 # Tool invocations
-http_client_demo.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+CC3200_ASW.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM Linker'
-	"/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib --abi=eabi -me -g --define=cc3200 --define=__SL__ --define=ccs --display_error_number --diag_warning=225 --diag_wrap=off -z -m"http_client_demo.map" --heap_size=0x800 --stack_size=0x800 -i"/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/lib" -i"/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/include" -i"/Users/Heavenlyking/Desktop/cc3200/CC3200SDK_1.1.0/cc3200-sdk/netapps/http/client/ccs/HTTPClientMinLib" -i"/Users/Heavenlyking/Desktop/cc3200/CC3200SDK_1.1.0/cc3200-sdk/netapps/json/ccs/Release/" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="http_client_demo_linkInfo.xml" --rom_model -o "http_client_demo.out" $(ORDERED_OBJS)
+	"/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/bin/armcl" -mv7M4 --code_state=16 --float_support=vfplib --abi=eabi -me -g --define=cc3200 --define=__SL__ --define=ccs --display_error_number --diag_warning=225 --diag_wrap=off -z -m"CC3200_ASW.map" --heap_size=0x800 --stack_size=0x800 -i"/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/lib" -i"/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/include" -i"/Users/Heavenlyking/Desktop/cc3200/CC3200SDK_1.1.0/cc3200-sdk/netapps/http/client/ccs/HTTPClientMinLib" -i"/Users/Heavenlyking/Desktop/cc3200/CC3200SDK_1.1.0/cc3200-sdk/netapps/json/ccs/Release/" --reread_libs --warn_sections --display_error_number --diag_wrap=off --xml_link_info="CC3200_ASW_linkInfo.xml" --rom_model -o "CC3200_ASW.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
 
-http_client_demo.hex: $(EXE_OUTPUTS)
+CC3200_ASW.hex: $(EXE_OUTPUTS)
 	@echo 'Invoking: ARM Hex Utility'
-	"/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/bin/armhex"  -o "http_client_demo.hex" $(EXE_OUTPUTS__QUOTED)
+	"/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/bin/armhex"  -o "CC3200_ASW.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $@'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -165,7 +165,7 @@ clean:
 	-@echo ' '
 
 post-build:
-	-"/Applications/ti/ccsv6/utils/tiobj2bin/tiobj2bin" "http_client_demo.out" "http_client_demo.bin" "/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/bin/armofd" "/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/bin/armhex" "/Applications/ti/ccsv6/utils/tiobj2bin/mkhex4bin"
+	-"/Applications/ti/ccsv6/utils/tiobj2bin/tiobj2bin" "CC3200_ASW.out" "CC3200_ASW.bin" "/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/bin/armofd" "/Applications/ti/ccsv6/tools/compiler/ti-cgt-arm_5.2.6/bin/armhex" "/Applications/ti/ccsv6/utils/tiobj2bin/mkhex4bin"
 	-@echo ' '
 
 .PHONY: all clean dependents
