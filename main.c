@@ -94,7 +94,7 @@
 #define GET_REQUEST_URI 	"/get"
 
 
-#define HOST_NAME       	"cc3200cli.applinzi.com" //"<host name>"
+#define HOST_NAME       	"" //"<host name>"添加你自己的服务器
 #define HOST_PORT           (80)
 
 #define PROXY_IP       	    <proxy_ip>
@@ -105,7 +105,7 @@
 //#define ID
 #define USER_NAME    		0
 #define Content				1
-#define user_name			"o5VPPs3cciMz6QwXyyuW1aZa2HvU"
+#define user_name			""//微信用户的user_name
 
 //http server
 
